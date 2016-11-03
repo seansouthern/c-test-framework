@@ -1,0 +1,11 @@
+Test Framework
+---------------------------------------------------------------------------
+The initially small testing manager has grabbed my interest and I'd like to
+do a proper job on it. The features I'm looking for are
+   - Ability to run tests automatically
+   - Ability to group tests into suites and choose which suites to run
+   - Detailed test failure info
+   - Custom asserts for common data types
+   - Persistance through fatal test errors
+   - Store logs of test runs
+   

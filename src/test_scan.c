@@ -7,9 +7,12 @@
 #include "../lib/linkedlist.h"
 
 #define SCAN_FILE_PATH "./src/scanned_tests.h"
+#define TESTS_DIR "./tests"
+
 
 FILE * scan_file;
 LinkedList * test_list;
+
 
 
 int strip_extension(LinkedList * in_list, Node * in_node)
@@ -37,7 +40,7 @@ LinkedList * scan_for_tests( void )
 	LinkedList * valid_files = list_create();
         struct dirent **namelist;
         
-	int n = scandir( "./src/test/tests/", &namelist, NULL, alphasort);
+	int n = scandir(TESTS_DIR, &namelist, NULL, alphasort);
 	
 	if (n < 0){
 		perror("scandir");
@@ -117,7 +120,7 @@ void write_tests_list(LinkedList * in_function_names)
 	set_scan_file(fopen(SCAN_FILE_PATH, "w"));	
 	if(get_scan_file() != NULL){
 		fprintf(get_scan_file(), "#ifndef SCANNED_TESTS_H\n#define SCANNED_TESTS_H\n#endif\n");
-		fprintf(get_scan_file(), "#ifndef LINKEDLIST_INC\n#include \"linkedlist.h\"\n#endif\n");
+		fprintf(get_scan_file(), "#ifndef LINKEDLIST_INC\n#include \"../lib/linkedlist.h\"\n#endif\n");
 		traverse(in_function_names, print_test_includes);
 
 		print_function_sig();

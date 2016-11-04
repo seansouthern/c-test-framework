@@ -1,15 +1,16 @@
+#ifndef WORKER_INC
 #define WORKER_INC
-#ifndef TEST_COMMON_INC
-#include "test_common.h"
-#endif
 
-typedef struct Result{
-	resultcode_t result_code;
-	char * test_name;
-        
-} result_t;
+#include "test.h"
+#include "result.h"
 
 
 
-result_t * compile_test(char * source_name);
-result_t * execute_test(char * bin_name);
+result_t * compile_test(test_t in_test, char * source_name);
+result_t * execute_test(test_t in_test, char * bin_path);
+
+
+
+#include "worker.c"
+
+#endif // WORKER_INC defined

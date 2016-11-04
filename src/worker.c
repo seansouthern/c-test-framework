@@ -1,15 +1,14 @@
-#ifndef WORKER_INC
-#include "worker.h"
-#endif
 
-result_t * compile_test(char * source_name)
+
+
+result_t * compile_test(test_t in_test, char * source_name)
 {
 	
 
 
 }
 
-result_t * execute_test(char * bin_name)
+result_t * execute_test(test_t in_test, char * bin_path)
 {
 	result_t * result;
 	
@@ -17,3 +16,4 @@ result_t * execute_test(char * bin_name)
 	
 	return result;
 }
+

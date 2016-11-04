@@ -2,17 +2,6 @@
 
 #include "../lib/linkedlist.h"
 
-/*
-int main(int argc, char** argv)
-{
-
-	write_tests_list(scan_for_tests());
-	printf("Tests scanned.\n");
-	
-	return 0;
-
-}
-*/
 
 int strip_extension(LinkedList * in_list, Node * in_node);
 LinkedList * strip_extensions(LinkedList * in_filenames);

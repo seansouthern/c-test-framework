@@ -14,14 +14,13 @@ typedef struct Test {
 } test_t;
 
 
-
+test_t test_constructor(char * name, char * path, time_t last_time_ran);
 result_t dispatch_worker(test_t in_test);
-void destroy_worker();
 
 
 
 
-
+#include "test.c"
 
 #endif // TEST_INC defined
 

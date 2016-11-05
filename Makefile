@@ -5,6 +5,9 @@ SRC=./src
 
 all: tests
 
+fork:
+	$(CC) -o fork_test $(SRC)/fork_driver.c
+
 clean:
 	-rm $(BIN)/*
 	-rm ./run_all_tests

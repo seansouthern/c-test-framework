@@ -2,10 +2,7 @@
 #define TEST_COMMON_INC
 
 #include <stdio.h>
-#include "../lib/linkedlist.h"
 #include "result.h"
-
-
 
 
 void debug_log(resultcode_t TEST_STATE, char * details)
@@ -28,7 +25,7 @@ void debug_log(resultcode_t TEST_STATE, char * details)
 	
 }
 
-
+/*
 int add_test(LinkedList * test_list, void(*test_func)(void))
 {
 	list_insert_node(test_list, list_create_node(test_func));
@@ -50,6 +47,6 @@ void run_all_tests( LinkedList * test_list)
 	traverse(test_list, run_test);
 }
 
-
+*/
 
 #endif // TEST_COMMON_INC defined

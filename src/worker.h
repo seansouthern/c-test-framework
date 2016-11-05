@@ -87,7 +87,9 @@ result_t * compile_test(test_t in_test)
 	result_t * result = calloc(1, sizeof(result_t));
 	result->RESULT_CODE = PASSED;
 	result->last_time_ran = time(NULL);
-	printf("compiled!\n");
+	printf("Compiling... %s\n", in_test.path);
+       
+	execl("/usr/bin/gcc", "gcc", "-o", "testy", in_test.path, (char *)NULL);
 	return result;
 }
 
